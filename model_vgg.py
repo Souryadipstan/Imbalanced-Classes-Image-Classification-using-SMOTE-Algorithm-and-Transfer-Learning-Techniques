@@ -7,7 +7,6 @@ from imblearn.over_sampling import SMOTE
 from tensorflow.keras.utils import to_categorical
 from tensorflow.keras.applications.vgg16 import VGG16
 from tensorflow.keras import layers
-from tensorflow.keras.initializers import glorot_uniform
 from keras.layers import Flatten,Dense, Input, AveragePooling2D, GlobalAveragePooling2D,Dropout,Add,ZeroPadding2D, MaxPooling2D,Conv2D, BatchNormalization, Activation
 from tensorflow.keras import Model
 from tensorflow.keras.models import Sequential
@@ -98,7 +97,7 @@ training_data = train_data_IDG.flow(X_train_1,y_train_1, batch_size=64, shuffle=
 
 validation_data = valid_data_IDG.flow(X_test,y_test, shuffle=False)
 
-model = load_model("Saved_models/model.hdf5")
+model = load_model("Saved_models/model_vgg.hdf5")
 
 df_test = pd.read_csv('image-classification-2/sample_submission.csv',dtype = 'str')
 
